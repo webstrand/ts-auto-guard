@@ -220,7 +220,7 @@ ts-auto-guard cannot generate type-guards for all typescript types automatically
 /** @see {isPersonId} ts-auto-guard:custom */
 export type PersonId = number & { brand: true };
 
-export function isPersonId(x: unknown): x is string {
+export function isPersonId(x: unknown): x is PersonId {
   return typeof x === "number";
   // or look up the identifier in a cache or database
 }
