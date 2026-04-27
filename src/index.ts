@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 
-import { FileUtils } from '@ts-morph/common'
 import {
   EnumDeclaration,
   ExportableNode,
@@ -785,7 +784,7 @@ function propertyConditions(
   )
   if (debug) {
     if (expectedType.indexOf('import') > -1) {
-      const standardizedCwd = FileUtils.standardizeSlashes(process.cwd())
+      const standardizedCwd = process.cwd().replace(/\\/g, '/')
       expectedType = expectedType.replace(standardizedCwd, '.')
     }
     return (
